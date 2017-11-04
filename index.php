@@ -8,23 +8,6 @@ $replyToken = $client->parseEvents()[0]['replyToken'];
 $message 	= $client->parseEvents()[0]['message'];
 $msg_type = $message['type'];
 $botname = "Kerang Ajaib"; //Nama bot
-$userId = $client->parseEvents()[0]['source']['userId'];
-$groupId = $client->parseEvents()[0]['source']['groupId'];
-$replyToken = $client->parseEvents()[0]['replyToken'];
-$timestamp = $client->parseEvents()[0]['timestamp'];
-$type = $client->parseEvents()[0]['type'];
-$message = $client->parseEvents()[0]['message'];
-$messageid = $client->parseEvents()[0]['message']['id'];
-$profil = $client->profil($userId);
-$pesan_datang = explode(" ", $message['text']);
-$command = $pesan_datang[0];
-$options = $pesan_datang[1];
-if (count($pesan_datang) > 2) {
-    for ($i = 2; $i < count($pesan_datang); $i++) {
-        $options .= '+';
-        $options .= $pesan_datang[$i];
-    }
-}
 
 function send($input, $rt){
     $send = array(
@@ -60,40 +43,6 @@ if($msg_type == 'text'){
         $balas = send(jawabs(), $replyToken);
     } else {}
 } else {}
-
-#---------------------------------------------------------------------
-	else if ($command == '/keyword') {
-	
-	        $balas = array(
-							'replyToken' => $replyToken,
-							'messages' => array(
-								array(
-										'type' => 'template',
-										'altText' => 'Keyword Bot',
-										'template' => array(
-											'type' => 'buttons',
-											'thumbnailImageUrl' => 'https://raw.githubusercontent.com/farzain/api-line/master/zFz.png',
-											'title' => 'zFz Line Bot',
-											'text' => 'Klik tombol dibawahini',
-											'actions' => array(
-								array(
-										'type' => 'message',
-										'label' => 'Cari Anime',
-										'text' => '/anime [Judul Anime]',
-									),
-								array(
-										'type' => 'message',
-										'label' => 'Cari Sinopsis Anime',
-										'text' => '/anime-syn [Judul Anime]',
-									)										
-                        )
-                  )
-             )					
-			 
-        )
-    );
-	}
-#---------------------------------------------------------------------
 
 if(isset($balas)){
     $client->replyMessage($balas); 
