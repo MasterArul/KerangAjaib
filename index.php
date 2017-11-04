@@ -42,7 +42,38 @@ if($msg_type == 'text'){
     if($filter[0] == 'apakah') {
         $balas = send(jawabs(), $replyToken);
     } else {}
-} else {}
+} else if ($msg_type == '/keyword') {
+	
+	        $balas = array(
+							'replyToken' => $replyToken,
+							'messages' => array(
+								array(
+										'type' => 'template',
+										'altText' => 'Keyword Bot',
+										'template' => array(
+											'type' => 'buttons',
+											'thumbnailImageUrl' => 'https://raw.githubusercontent.com/farzain/api-line/master/zFz.png',
+											'title' => 'zFz Line Bot',
+											'text' => 'Klik tombol dibawahini',
+											'actions' => array(
+								array(
+										'type' => 'message',
+										'label' => 'Cari Anime',
+										'text' => '/anime [Judul Anime]',
+									),
+								array(
+										'type' => 'message',
+										'label' => 'Cari Sinopsis Anime',
+										'text' => '/anime-syn [Judul Anime]',
+									)										
+                        )
+                  )
+             )					
+			 
+        )
+    );
+	}
+#---------------------------------------------------------------------
 
 if(isset($balas)){
     $client->replyMessage($balas); 
