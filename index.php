@@ -42,7 +42,10 @@ if($msg_type == 'text'){
     if($filter[0] == 'apakah') {
         $balas = send(jawabs(), $replyToken);
     } else {}
-} else if ($msg_type == '/keyword') {
+} else {}
+
+#---------------------------------------------------------------------
+if ($msg_type == '/keyword') {
 	
 	        $balas = array(
 							'replyToken' => $replyToken,
