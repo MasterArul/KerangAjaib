@@ -42,7 +42,7 @@ function jawabs(){
 if($msg_type == 'text'){
     $pesan_datang = strtolower($message['text']);
     $filter = explode(' ', $pesan_datang);
-    if($filter[0] == 'apakah') {
+    if($filter[0] == 'apakah', 'mungkinkah', 'bisakah') {
         $balas = send(jawabs(), $replyToken);
     } else {}
 } else {}
