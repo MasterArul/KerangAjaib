@@ -25,11 +25,14 @@ function send($input, $rt){
 function jawabs(){
     $list_jwb = array(
 		'Ya',
+		'Tentu Iya',	    
 		'Tidak',
+		'Tentu Tidak',	    
 		'Bisa jadi',
 		'Mungkin',
-		'Tentu tidak',
-		'Coba tanya lagi'
+		'Coba tanya lagi',
+		'lebih keras',	    
+		'Coba sekali lagi'
 		);
     $jaws = array_rand($list_jwb);
     $jawab = $list_jwb[$jaws];
@@ -39,7 +42,7 @@ function jawabs(){
 if($msg_type == 'text'){
     $pesan_datang = strtolower($message['text']);
     $filter = explode(' ', $pesan_datang);
-    if($filter[0] == 'apakah') {
+    if($filter[0] == 'apakah','mungkinkah','akankah','bisakah') {
         $balas = send(jawabs(), $replyToken);
     } else {}
 } else {}
