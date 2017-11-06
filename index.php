@@ -42,9 +42,19 @@ function jawabs(){
 if($msg_type == 'text'){
     $pesan_datang = strtolower($message['text']);
     $filter = explode(' ', $pesan_datang);
-    if($filter[0] == 'apakah'
-	   $filter[1] == 'mungkinkah'
-	   $filter[2] == 'bisakah') {
+    if($filter[0] == 'apakah') {
+        $balas = send(jawabs(), $replyToken);
+    } else {}
+} if($msg_type == 'text'){
+    $pesan_datang = strtolower($message['text']);
+    $filter = explode(' ', $pesan_datang);
+    if($filter[0] == 'bisakah') {
+        $balas = send(jawabs(), $replyToken);
+    } else {}
+} if($msg_type == 'text'){
+    $pesan_datang = strtolower($message['text']);
+    $filter = explode(' ', $pesan_datang);
+    if($filter[0] == 'mungkinkah') {
         $balas = send(jawabs(), $replyToken);
     } else {}
 } else {}
