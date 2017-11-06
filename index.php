@@ -39,6 +39,24 @@ function jawabs(){
     return($jawab);
 }
 
+function dosa(){
+    $list_jwb = array(
+		'10%',
+		'20%',
+		'30%',
+		'40%',
+		'50%',
+		'60%',
+		'70%',
+		'80%',
+		'90%',
+		'100%'	
+		);
+    $jaws = array_rand($list_jwb);
+    $jawab = $list_jwb[$jaws];
+    return($jawab);
+}
+
 if($msg_type == 'text'){
     $pesan_datang = strtolower($message['text']);
     $filter = explode(' ', $pesan_datang);
@@ -56,6 +74,12 @@ if($msg_type == 'text'){
     $filter = explode(' ', $pesan_datang);
     if($filter[0] == 'mungkinkah') {
         $balas = send(jawabs(), $replyToken);
+    } else {}
+} if($msg_type == 'text'){
+    $pesan_datang = strtolower($message['text']);
+    $filter = explode(' ', $pesan_datang);
+    if($filter[0] == 'dosanya') {
+        $balas = send('Dosanya Sebesar' dosa() 'Cepat Cepat Tobat Kak :)', $replyToken);
     } else {}
 } else {}
 
