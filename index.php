@@ -57,6 +57,23 @@ function dosa(){
     return($jawab);
 }
 
+function dosa2(){
+    $list_jwb = array(
+		'Dosanya Sebesar ',
+		);
+    $jaws = array_rand($list_jwb);
+    $jawab = $list_jwb[$jaws];
+    return($jawab);
+}
+function dosa3(){
+    $list_jwb = array(
+		' Cepat cepat tobat bos',
+		);
+    $jaws = array_rand($list_jwb);
+    $jawab = $list_jwb[$jaws];
+    return($jawab);
+}
+
 if($msg_type == 'text'){
     $pesan_datang = strtolower($message['text']);
     $filter = explode(' ', $pesan_datang);
@@ -79,7 +96,9 @@ if($msg_type == 'text'){
     $pesan_datang = strtolower($message['text']);
     $filter = explode(' ', $pesan_datang);
     if($filter[0] == 'dosanya') {
-        $balas = send('Dosanya Sebesar' dosa() 'Cepat Cepat Tobat Kak :)', $replyToken);
+		$balas = send(dosa2(), $replyToken);
+        $balas = send(dosa(), $replyToken);
+		$balas = send(dosa3(), $replyToken);
     } else {}
 } else {}
 
