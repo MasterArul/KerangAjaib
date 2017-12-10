@@ -1,7 +1,7 @@
 <?php
 require_once('./line_class.php');
-$channelAccessToken = 'Vqw1oQhb4axZdn8r8Ou5E0XXpjbpLs1Kg0YclzDn2vS1OQ6K+s/GmjkxmIWU+H97pF2Bv9vzEHPRSULQZNbzjZIemuZ8bj3aSOXr8jnaLBFr7mjSnwBwyEQ5fgzGIIhmZAa+Rre8rxQig/a5WIGADwdB04t89/1O/w1cDnyilFU='; //Channel access token
-$channelSecret = '5cdcab743ff8ccecfddafd88c51df309';//Channel secret
+$channelAccessToken = 'KSqC4L4DQB5o2uk3eZTIwSNQgUGKoMF451X9VIkgmlzzDTEw+yCoA1eknDJ8HQM/IK0aLhJYABpYBZZpInVA7tksnVvLen2MUIDGwR8MtG1DBnz9LFcip99gZJ0zqCaezrR3tQlGlK8Xhb7Gz3nPMAdB04t89/1O/w1cDnyilFU='; //Channel access token
+$channelSecret = 'd735bbd21936b39f05224829eaed6f50';//Channel secret
 
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 $replyToken = $client->parseEvents()[0]['replyToken'];
