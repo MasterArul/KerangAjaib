@@ -1,13 +1,13 @@
 <?php
 require_once('./line_class.php');
-$channelAccessToken = 'KSqC4L4DQB5o2uk3eZTIwSNQgUGKoMF451X9VIkgmlzzDTEw+yCoA1eknDJ8HQM/IK0aLhJYABpYBZZpInVA7tksnVvLen2MUIDGwR8MtG1DBnz9LFcip99gZJ0zqCaezrR3tQlGlK8Xhb7Gz3nPMAdB04t89/1O/w1cDnyilFU='; //Channel access token
-$channelSecret = 'd735bbd21936b39f05224829eaed6f50';//Channel secret
+$channelAccessToken = 'T/Wp6kD8ekUbijoTHeRQHBd92HLRRxuQLnylawx9TyxjWi1rIVlQoopyotBAY90PsnZ3vLt5Wxq4eVAowFze02/+Zn+OZ+x2JP6nKWU1ptj08M6dtXZjTH0TcQIdRSnO83T6PgxDpvRmjzd89SK7GwdB04t89/1O/w1cDnyilFU='; //Channel access token
+$channelSecret = 'eaf2514ad3f0bf878aad749da628d64a';//Channel secret
 
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 $replyToken = $client->parseEvents()[0]['replyToken'];
 $message 	= $client->parseEvents()[0]['message'];
 $msg_type = $message['type'];
-$botname = "Kerang Ajaib"; //Nama bot
+$botname = "Tupai Ajaib"; //Nama bot
 
 function send($input, $rt){
     $send = array(
